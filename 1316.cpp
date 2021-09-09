@@ -32,13 +32,13 @@ int main() {
 void checkGroupWord(string str) {
 	vector<bool> check(26, 0);
 	cnt++;
-	check[str.at(0) - 'a'] = true;
+	check[str[0] - 'a'] = true;
 	for (int i = 1; i < str.size(); i++) {
-		if (str.at(i - 1) == str.at(i)) continue;
-		if (check[str.at(i) - 'a']) {
+		if (str[i - 1] == str[i]) continue;
+		if (check[str[i] - 'a']) {
 			cnt--;
 			break;
 		}
-		check[str.at(i) - 'a'] = true;
+		check[str[i] - 'a'] = true;
 	}
 }

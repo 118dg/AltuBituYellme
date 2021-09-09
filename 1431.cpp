@@ -41,7 +41,7 @@ int main() {
 int GetSum(string str) {
 	int sum = 0;
 	for (int i = 0; i < str.size(); i++) {
-		if (str.at(i) - '0' >= 0 && str.at(i) - '0' <= 9) sum += str.at(i) - '0';
+		if (isdigit(str[i])) sum += str[i] - '0';
 	}
 	return sum;
 }
