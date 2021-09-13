@@ -9,7 +9,6 @@ using namespace std;
 int last1, last2, up = 0;
 
 void sum(string& str1, string& str2, string& res);
-void print(string& str);
 
 int main() {
 
@@ -17,7 +16,6 @@ int main() {
 	cin >> n1 >> n2;
 
 	sum(n1, n2, res);
-	print(res);
 
 	return 0;
 }
@@ -40,9 +38,7 @@ void sum(string &str1, string &str2, string &res) {
 		sum %= 10;
 		res += sum + '0';
 	}
-}
 
-void print(string& str) {
-	if (up > 0) str += up + '0';
-	for (int i = str.length() - 1; i >= 0; i--) cout << str[i];
+	if (up > 0) res += up + '0';
+	for (int i = res.length() - 1; i >= 0; i--) cout << res[i];
 }
