@@ -8,19 +8,22 @@ using namespace std;
 
 int last1, last2, up = 0;
 
-void sum(string& str1, string& str2, string& res);
+string sum(string& str1, string& str2);
 
 int main() {
 
-	string n1, n2, res = "";
+	string n1, n2;
 	cin >> n1 >> n2;
 
-	sum(n1, n2, res);
+	string res = sum(n1, n2);
+
+	for (int i = res.length() - 1; i >= 0; i--) cout << res[i];
 
 	return 0;
 }
 
-void sum(string &str1, string &str2, string &res) {
+string sum(string &str1, string &str2) {
+	string res = "";
 	int len1 = str1.size(), len2 = str2.size(), ch1, ch2;
 	while (len1 > 0 || len2 > 0)
 	{
@@ -38,7 +41,6 @@ void sum(string &str1, string &str2, string &res) {
 		sum %= 10;
 		res += sum + '0';
 	}
-
 	if (up > 0) res += up + '0';
-	for (int i = res.length() - 1; i >= 0; i--) cout << res[i];
+	return res;
 }
